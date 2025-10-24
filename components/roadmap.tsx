@@ -89,19 +89,19 @@ export default function Roadmap() {
   ]
 
   return (
-    <section id="roadmap" className="py-20 px-4 md:px-8 bg-background">
+    <section id="roadmap" className="py-12 sm:py-16 md:py-20 px-4 md:px-8 bg-background">
       <div className="max-w-6xl mx-auto">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-4">Career Roadmap</h2>
-          <p className="text-lg text-muted-foreground">A journey of growth, learning, and achievement</p>
+        <div className="text-center mb-8 sm:mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-foreground mb-3 sm:mb-4">Career Roadmap</h2>
+          <p className="text-sm sm:text-base md:text-lg text-muted-foreground px-4">A journey of growth, learning, and achievement</p>
         </div>
 
         {/* Roadmap Container */}
         <div className="relative">
           {/* SVG Serpent Path */}
           <svg
-            className="absolute left-1/2 top-0 w-1 h-full transform -translate-x-1/2"
+            className="absolute left-4 sm:left-1/2 top-0 w-0.5 sm:w-1 h-full sm:transform sm:-translate-x-1/2"
             viewBox="0 0 2 1000"
             preserveAspectRatio="none"
           >
@@ -122,35 +122,33 @@ export default function Roadmap() {
           </svg>
 
           {/* Milestones */}
-          <div className="space-y-32">
+          <div className="space-y-16 sm:space-y-24 md:space-y-32">
             {milestones.map((milestone, index) => (
               <div
                 key={index}
-                className={`flex items-center gap-8 md:gap-12 ${
-                  milestone.position === "right" ? "flex-row" : "flex-row-reverse"
+                className={`flex items-center gap-4 sm:gap-8 md:gap-12 ${
+                  milestone.position === "right" ? "flex-row" : "sm:flex-row-reverse flex-row"
                 }`}
               >
                 {/* Content */}
                 <div className="flex-1">
                   <div
-                    className={`p-6 rounded-lg border border-border bg-card hover:shadow-lg transition-shadow ${
-                      milestone.position === "right" ? "text-left" : "text-right"
-                    }`}
+                    className="p-4 sm:p-6 rounded-lg border border-border bg-card hover:shadow-lg transition-shadow text-left"
                   >
-                    <div className="text-sm font-semibold text-primary mb-2">{milestone.year}</div>
-                    <h3 className="text-xl font-bold text-foreground mb-1">{milestone.title}</h3>
-                    <p className="text-sm text-primary mb-3">{milestone.organization}</p>
-                    <p className="text-sm text-muted-foreground mb-4">{milestone.description}</p>
+                    <div className="text-xs sm:text-sm font-semibold text-primary mb-1 sm:mb-2">{milestone.year}</div>
+                    <h3 className="text-base sm:text-lg md:text-xl font-bold text-foreground mb-1">{milestone.title}</h3>
+                    <p className="text-xs sm:text-sm text-primary mb-2 sm:mb-3">{milestone.organization}</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground mb-3 sm:mb-4">{milestone.description}</p>
                     {milestone.skills && milestone.skills.length > 0 && (
-                      <div className="mt-4 pt-4 border-t border-border">
-                        <p className="text-xs font-semibold text-muted-foreground mb-3 uppercase tracking-wide">
+                      <div className="mt-3 sm:mt-4 pt-3 sm:pt-4 border-t border-border">
+                        <p className="text-xs font-semibold text-muted-foreground mb-2 sm:mb-3 uppercase tracking-wide">
                           Key Skills Learned:
                         </p>
-                        <div className="flex flex-wrap gap-2">
+                        <div className="flex flex-wrap gap-1.5 sm:gap-2">
                           {milestone.skills.map((skill, skillIndex) => (
                             <span
                               key={skillIndex}
-                              className="inline-block px-3 py-1.5 text-xs font-medium bg-primary/15 text-primary rounded-full border border-primary/30 hover:bg-primary/25 transition-colors"
+                              className="inline-block px-2 sm:px-3 py-1 sm:py-1.5 text-xs font-medium bg-primary/15 text-primary rounded-full border border-primary/30 hover:bg-primary/25 transition-colors"
                             >
                               {skill}
                             </span>
@@ -163,7 +161,7 @@ export default function Roadmap() {
 
                 {/* Center Dot */}
                 <div className="flex-shrink-0 flex justify-center">
-                  <div className="w-6 h-6 rounded-full bg-primary border-4 border-background shadow-lg" />
+                  <div className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 rounded-full bg-primary border-2 sm:border-3 md:border-4 border-background shadow-lg" />
                 </div>
 
                 {/* Spacer for alignment */}

@@ -1,7 +1,13 @@
 {
   "permissions": {
     "allow": [
-      "WebSearch"
+      "WebSearch",
+      "mcp__ide__getDiagnostics",
+      "Bash(npm run build:*)",
+      "Bash(dir:*)",
+      "Bash(del /F \"\\?\\C:\\Users\\HATIM ABBAOUI\\Desktop\\hatim-portfolio\\nul\")",
+      "Bash(rm:*)",
+      "Bash(powershell -Command \"Remove-Item -Path ''\\?\\C:\\Users\\HATIM ABBAOUI\\Desktop\\hatim-portfolio\\nul'' -Force\")"
     ],
     "deny": [],
     "ask": []

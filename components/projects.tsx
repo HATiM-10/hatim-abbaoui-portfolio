@@ -56,11 +56,11 @@ export default function Projects() {
   }
 
   return (
-    <section id="projects" className="py-20 px-4 bg-secondary/30">
+    <section id="projects" className="py-12 sm:py-16 md:py-20 px-4 bg-secondary/30">
       <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold mb-12 text-center">Featured Projects</h2>
+        <h2 className="text-3xl sm:text-4xl font-bold mb-8 sm:mb-12 text-center">Featured Projects</h2>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 sm:gap-6 md:gap-8">
           {projects.map((project, index) => {
             const isExpanded = expandedProjects[index]
             const descriptionLimit = 200
@@ -68,9 +68,9 @@ export default function Projects() {
             return (
               <div
                 key={project.title}
-                className="bg-background rounded-lg border border-border p-6 hover:border-primary/50 transition-colors"
+                className="bg-background rounded-lg border border-border p-4 sm:p-6 hover:border-primary/50 transition-colors"
               >
-                <div className="mb-4 h-48 bg-white rounded-lg flex items-center justify-center overflow-hidden p-4">
+                <div className="mb-3 sm:mb-4 h-40 sm:h-48 bg-white rounded-lg flex items-center justify-center overflow-hidden p-3 sm:p-4">
                   {project.projectImage ? (
                     <img
                       src={project.projectImage}
@@ -82,14 +82,14 @@ export default function Projects() {
                   )}
                 </div>
 
-                <h3 className="text-xl font-semibold mb-2">{project.title}</h3>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2">{project.title}</h3>
 
-                <p className="text-muted-foreground mb-2 text-sm leading-relaxed">
+                <p className="text-muted-foreground mb-2 text-xs sm:text-sm leading-relaxed">
                   {isExpanded ? project.description : truncateText(project.description, descriptionLimit)}
                 </p>
 
                 {isExpanded && project.image && (
-                  <div className="my-4">
+                  <div className="my-3 sm:my-4">
                     <img
                       src={project.image}
                       alt={project.title}
@@ -101,15 +101,15 @@ export default function Projects() {
                 {project.description.length > descriptionLimit && (
                   <button
                     onClick={() => toggleProject(index)}
-                    className="text-primary text-sm font-medium hover:underline mb-4"
+                    className="text-primary text-xs sm:text-sm font-medium hover:underline mb-3 sm:mb-4 active:scale-95 transition-transform"
                   >
                     {isExpanded ? "See Less" : "See More"}
                   </button>
                 )}
 
-                <div className="mt-4">
-                  <p className="text-xs font-semibold text-primary mb-2">{project.achievement}</p>
-                  <div className="flex flex-wrap gap-2">
+                <div className="mt-3 sm:mt-4">
+                  <p className="text-xs font-semibold text-primary mb-2 line-clamp-2">{project.achievement}</p>
+                  <div className="flex flex-wrap gap-1.5 sm:gap-2">
                     {project.tags.slice(0, isExpanded ? project.tags.length : 5).map((tag) => (
                       <span key={tag} className="px-2 py-1 bg-secondary text-xs rounded text-muted-foreground">
                         {tag}

@@ -34,47 +34,47 @@ export default function Experience() {
   ]
 
   return (
-    <section id="experience" className="py-20 px-4">
+    <section id="experience" className="py-12 sm:py-16 md:py-20 px-4">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold mb-4 text-center">Professional Experience</h2>
-        <p className="text-center text-muted-foreground mb-12">
+        <h2 className="text-3xl sm:text-4xl font-bold mb-3 sm:mb-4 text-center">Professional Experience</h2>
+        <p className="text-center text-sm sm:text-base text-muted-foreground mb-8 sm:mb-12 px-4">
           A track record of driving operational excellence and continuous improvement
         </p>
 
-        <div className="space-y-8">
+        <div className="space-y-6 sm:space-y-8">
           {experiences.map((exp, index) => (
-            <div key={index} className="flex gap-6">
+            <div key={index} className="flex gap-3 sm:gap-6">
               <div className="flex flex-col items-center">
-                <div className="w-4 h-4 bg-primary rounded-full mt-2"></div>
-                {index !== experiences.length - 1 && <div className="w-1 h-24 bg-border mt-2"></div>}
+                <div className="w-3 h-3 sm:w-4 sm:h-4 bg-primary rounded-full mt-2"></div>
+                {index !== experiences.length - 1 && <div className="w-0.5 sm:w-1 h-20 sm:h-24 bg-border mt-2"></div>}
               </div>
 
-              <div className="pb-8 flex-1">
-                <div className="flex items-start justify-between gap-4 mb-2">
-                  <div className="flex items-start gap-4">
+              <div className="pb-6 sm:pb-8 flex-1">
+                <div className="flex flex-col sm:flex-row sm:items-start sm:justify-between gap-2 sm:gap-4 mb-3 sm:mb-2">
+                  <div className="flex items-start gap-3 sm:gap-4">
                     <img
                       src={exp.logo || "/placeholder.svg"}
                       alt={exp.organization}
-                      className="w-12 h-12 rounded-lg object-contain bg-white p-2 flex-shrink-0"
+                      className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-contain bg-white p-1.5 sm:p-2 flex-shrink-0"
                     />
                     <div>
-                      <h3 className="text-xl font-bold mb-1">{exp.title}</h3>
-                      <p className="text-primary font-medium">{exp.organization}</p>
+                      <h3 className="text-lg sm:text-xl font-bold mb-1">{exp.title}</h3>
+                      <p className="text-primary font-medium text-sm sm:text-base">{exp.organization}</p>
                     </div>
                   </div>
-                  <span className="text-sm font-semibold text-primary border border-primary rounded-lg px-3 py-1 whitespace-nowrap">
+                  <span className="text-xs sm:text-sm font-semibold text-primary border border-primary rounded-lg px-2 sm:px-3 py-1 whitespace-nowrap self-start">
                     {exp.year}
                   </span>
                 </div>
-                <p className="text-muted-foreground mb-4 mt-4">{exp.description}</p>
+                <p className="text-muted-foreground text-sm sm:text-base mb-3 sm:mb-4 mt-3 sm:mt-4">{exp.description}</p>
 
                 {exp.keyAchievements && exp.keyAchievements.length > 0 && (
-                  <div className="mt-4">
-                    <h4 className="font-bold mb-3">Key Achievements:</h4>
-                    <ul className="space-y-2">
+                  <div className="mt-3 sm:mt-4">
+                    <h4 className="font-bold text-sm sm:text-base mb-2 sm:mb-3">Key Achievements:</h4>
+                    <ul className="space-y-1.5 sm:space-y-2">
                       {exp.keyAchievements.map((achievement, achIndex) => (
-                        <li key={achIndex} className="flex gap-3 text-muted-foreground">
-                          <span className="text-primary mt-1 flex-shrink-0">●</span>
+                        <li key={achIndex} className="flex gap-2 sm:gap-3 text-xs sm:text-sm text-muted-foreground">
+                          <span className="text-primary mt-0.5 sm:mt-1 flex-shrink-0">●</span>
                           <span>{achievement}</span>
                         </li>
                       ))}
